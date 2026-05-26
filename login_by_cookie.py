@@ -1,7 +1,7 @@
 """
-Login bharat.vistas using browser sessionid cookie.
+Login muggedmoments using browser sessionid cookie.
 Steps:
-  1. Open chrome/firefox, go to instagram.com, log in as bharat.vistas
+  1. Open chrome/firefox, go to instagram.com, log in as muggedmoments
   2. Open DevTools (F12) → Application → Cookies → instagram.com
   3. Copy the value of 'sessionid' cookie
   4. Run: python login_by_cookie.py

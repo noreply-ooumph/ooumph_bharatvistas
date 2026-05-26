@@ -2,7 +2,7 @@ name: Auto Poster Bot
 
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: "0 4 * * *"
   workflow_dispatch:
 
 jobs:
@@ -15,12 +15,14 @@ jobs:
           token: ${{ secrets.GH_PAT }}
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
       - run: pip install groq python-dotenv requests Pillow --quiet
       - name: Write credentials
         run: |
-          printf 'GROQ_API_KEY=%s\nGRAPH_PAGE_TOKEN=%s\nGRAPH_IG_USER_ID=%s\n' \
-            '${{ secrets.GROQ_API_KEY }}' '${{ secrets.GRAPH_PAGE_TOKEN }}' '${{ secrets.GRAPH_IG_USER_ID }}' > .env
+          printf "GROQ_API_KEY=%s
+GRAPH_PAGE_TOKEN=%s
+GRAPH_IG_USER_ID=%s
+"             "${{ secrets.GROQ_API_KEY }}" "${{ secrets.GRAPH_PAGE_TOKEN }}" "${{ secrets.GRAPH_IG_USER_ID }}" > .env
       - name: Generate content and image
         run: python graph_poster.py --step generate
       - name: Commit image to repo

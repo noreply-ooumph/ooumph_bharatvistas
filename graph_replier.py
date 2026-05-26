@@ -1,6 +1,3 @@
-"""
-Graph API replier for bharat.vistas — official Meta Graph API, never blocked.
-"""
 import sys, os, time, random
 sys.path.insert(0, os.path.dirname(__file__))
 
@@ -17,8 +14,8 @@ GRAPH_BASE  = "https://graph.facebook.com/v21.0"
 PAGE_TOKEN  = os.environ.get("GRAPH_PAGE_TOKEN", "")
 IG_USER_ID  = os.environ.get("GRAPH_IG_USER_ID", "17841465525733184")
 
-REPLY_SYSTEM = """Reply to an Instagram comment for bharat.vistas (Indian travel photography page).
-1 sentence only. No filler words. No "Thanks!", "Great!", "Love this!". Vivid, travel-passionate, on-topic. Emoji only if it adds meaning."""
+REPLY_SYSTEM = """Reply to an Instagram comment for muggedmoments (coffee culture and aesthetic lifestyle page).
+1 sentence only. No filler words. No Thanks!, Great!, Love this!. Warm, cozy, coffee-passionate, on-topic. Emoji only if it adds meaning."""
 
 MAX_POSTS   = 5
 MAX_REPLIES = 10
@@ -48,9 +45,12 @@ def post_reply(comment_id, message):
 def generate_reply(comment_text, caption):
     resp = client_ai.messages.create(
         model="claude-haiku-4-5-20251001", max_tokens=40, system=REPLY_SYSTEM,
-        messages=[{"role": "user", "content": f"Post topic: {caption[:80]}\nComment: {comment_text}\n\nReply:"}]
+        messages=[{"role": "user", "content": f"Post topic: {caption[:80]}
+Comment: {comment_text}
+
+Reply:"}]
     )
-    return resp.content[0].text.strip().strip('"').strip("'")
+    return resp.content[0].text.strip().strip(chr(34)).strip(chr(39))
 
 if not PAGE_TOKEN:
     print("[REPLIER] ERROR: GRAPH_PAGE_TOKEN not set")
@@ -59,7 +59,8 @@ if not PAGE_TOKEN:
 print(f"[REPLIER] Graph API replier starting: {CHECKS} checks x {INTERVAL}s")
 
 for check_num in range(1, CHECKS + 1):
-    print(f"\n--- Check {check_num}/{CHECKS} ---")
+    print(f"
+--- Check {check_num}/{CHECKS} ---")
     replied = load_replied()
     new_total = 0
     try:
@@ -78,7 +79,7 @@ for check_num in range(1, CHECKS + 1):
                 for c in fresh:
                     if new_total >= MAX_REPLIES:
                         break
-                    print(f"    @{c['username']}: {c['text'][:60]}")
+                    uname = c.get("username", ""); txt = c.get("text", ""); print(f"    @{uname}: {txt[:60]}")
                     try:
                         reply_text = generate_reply(c["text"], caption)
                         print(f"    Reply: {reply_text}")
@@ -102,4 +103,5 @@ for check_num in range(1, CHECKS + 1):
         print(f"  Check error: {e}")
     print(f"  Done. Replied to {new_total} new comments this check.")
 
-print(f"\n[REPLIER] Loop complete.")
+print(f"
+[REPLIER] Loop complete.")

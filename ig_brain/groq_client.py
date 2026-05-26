@@ -5,7 +5,6 @@ that the rest of ig_brain expects from the Anthropic client.
 import os
 from groq import Groq
 
-# Map Anthropic model names → Groq equivalents
 _MODEL_MAP = {
     "claude-sonnet-4-5":        "llama-3.3-70b-versatile",
     "claude-haiku-4-5-20251001": "llama-3.1-8b-instant",

@@ -1,15 +1,12 @@
-"""
-Central config for bharat.vistas Instagram Brain
-"""
 import os
 from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).parent.parent / ".env", override=True)
 
-ACCOUNT_USERNAME = "bharat.vistas"
-ACCOUNT_USER_ID  = 59542557883
-ACCOUNT_NICHE    = "Indian travel photography, landscapes, heritage sites, nature, culture, and the beauty of Bharat"
+ACCOUNT_USERNAME = "muggedmoments"
+ACCOUNT_USER_ID  = 65545472191
+ACCOUNT_NICHE    = "Coffee culture, aesthetic mugs, cozy lifestyle, cafe vibes, morning rituals, and everyday beautiful moments"
 
 POSTING_HOURS    = [9, 13, 18, 21]
 POSTS_PER_DAY    = 1
@@ -31,23 +28,23 @@ ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 GROQ_KEY      = os.environ.get("GROQ_API_KEY", "")
 
 CONTENT_PILLARS = [
-    "Iconic Indian heritage sites and their untold stories",
-    "Hidden gems — offbeat travel destinations across Bharat",
-    "Indian landscapes — mountains, deserts, backwaters, forests",
-    "Cultural festivals and traditions captured through the lens",
-    "Street photography — colours and life of Indian cities",
-    "Spiritual India — temples, ghats, and sacred places",
-    "Wildlife and nature photography across Indian reserves",
-    "Food and local cuisine from different states of India",
-    "Travel tips and guides for exploring India",
-    "Sunrise and sunset vistas from across the subcontinent",
+    "Aesthetic coffee and mug photography -- latte art, steam, cozy setups",
+    "Morning ritual content -- slow mornings, journals, and a perfect cup",
+    "Cafe culture and coffee shop vibes -- ambiance and atmosphere",
+    "Coffee recipes and brewing methods -- pour over, french press, espresso",
+    "Cozy lifestyle -- books, blankets, rainy days and coffee",
+    "Behind the mug -- stories of people and their coffee moments",
+    "Seasonal coffee drinks -- winter warmers, summer cold brews",
+    "Minimalist and aesthetic flat lay photography",
+    "Coffee facts and trivia -- engaging educational content",
+    "Community moments -- user stories and coffee connections",
 ]
 
 HASHTAG_POOLS = {
-    "travel":     ["#indiatravel", "#incredibleindia", "#bharatdarshan", "#travelindia", "#exploreindiaIG", "#indiatravelgram", "#wanderlust", "#travelphotography"],
-    "heritage":   ["#heritageIndia", "#indiaheritage", "#historicalplaces", "#ancientindia", "#UNESCO", "#fortsofindia", "#templesofIndia"],
-    "nature":     ["#naturephotography", "#landscapephotography", "#indiawildlife", "#indialandscape", "#mountains", "#himalayas", "#westernghats"],
-    "culture":    ["#indianculture", "#festivalsofIndia", "#colorsofindia", "#streetphotography", "#indiaclicks", "#indiapictures"],
-    "photography":["#photography", "#photooftheday", "#naturephoto", "#travelphotographer", "#goldenhour", "#shotoniphone", "#canon"],
+    "coffee":     ["#coffee", "#coffeelover", "#coffeeaddict", "#coffeetime", "#coffeeoftheday", "#specialtycoffee", "#latteart", "#espresso"],
+    "aesthetic":  ["#aesthetic", "#coffeesthetic", "#cozy", "#cozyliving", "#slowmorning", "#morningroutine", "#cozyhome", "#hygge"],
+    "mugs":       ["#muglife", "#coffeemug", "#mugshot", "#ceramics", "#potterylove", "#handmade", "#mugcollection"],
+    "cafe":       ["#cafevibes", "#cafelife", "#coffeeshop", "#cafestagram", "#coffeehouse", "#barista", "#brewedwithlove"],
+    "lifestyle":  ["#lifestyle", "#morningvibes", "#selfcare", "#weekendvibes", "#homecafe", "#cottagecore", "#comfortzone"],
     "general":    ["#reels", "#explore", "#viral", "#trending", "#instagram", "#fyp", "#instagood"],
 }

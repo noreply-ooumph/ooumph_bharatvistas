@@ -38,42 +38,42 @@ def generate_image_hf(prompt: str) -> Path:
 
 
 def generate_image_pil(prompt: str) -> Path:
-    """Generate a warm golden-style text card using PIL."""
+    """Generate a warm moody coffee-style text card using PIL."""
     try:
         from PIL import Image, ImageDraw
         import textwrap, math
 
         W, H = 1080, 1080
-        img  = Image.new("RGB", (W, H), (20, 12, 4))
+        img  = Image.new("RGB", (W, H), (18, 12, 8))
         draw = ImageDraw.Draw(img)
 
-        # Warm golden gradient
+        # Warm moody coffee gradient
         for y in range(H):
             t = y / H
-            r = int(20 + 80  * math.sin(t * math.pi))
-            g = int(12 + 50  * math.sin(t * math.pi))
-            b = int(4  + 20  * math.sin(t * math.pi))
+            r = int(18 + 70  * math.sin(t * math.pi))
+            g = int(12 + 40  * math.sin(t * math.pi))
+            b = int(8  + 25  * math.sin(t * math.pi))
             draw.line([(0, y), (W, y)], fill=(r, g, b))
 
         # Decorative border
-        for offset, color in [(30,(160,120,40)),(36,(120,90,25)),(42,(80,60,15))]:
+        for offset, color in [(30,(130,90,50)),(36,(100,70,35)),(42,(70,50,20))]:
             draw.rectangle([offset, offset, W-offset, H-offset], outline=color, width=1)
 
         # Topic text
-        words   = prompt.replace("cinematic","").replace("inspiring","").strip()
+        words   = prompt.replace("cinematic","").replace("moody","").strip()
         wrapped = textwrap.wrap(words[:120], width=18)
         y_pos   = H//2 - len(wrapped)*45
         for line in wrapped[:5]:
-            draw.text((W//2+2, y_pos+2), line.upper(), fill=(40,25,5), anchor="mm")
-            draw.text((W//2, y_pos), line.upper(), fill=(255, 220, 120), anchor="mm")
+            draw.text((W//2+2, y_pos+2), line.upper(), fill=(30,20,10), anchor="mm")
+            draw.text((W//2, y_pos), line.upper(), fill=(220, 180, 120), anchor="mm")
             y_pos += 90
 
         # Divider
-        draw.line([(W//2-120, H-140), (W//2+120, H-140)], fill=(180, 140, 60), width=1)
+        draw.line([(W//2-120, H-140), (W//2+120, H-140)], fill=(160, 110, 60), width=1)
 
         # Brand name
-        draw.text((W//2, H-100), "thegurukul.online", fill=(220, 180, 80), anchor="mm")
-        draw.text((W//2, H-68),  "Wisdom · Learning · Growth", fill=(140, 110, 40), anchor="mm")
+        draw.text((W//2, H-100), "muggedmoments", fill=(200, 160, 100), anchor="mm")
+        draw.text((W//2, H-68),  "Coffee · Cozy · Aesthetic", fill=(130, 95, 50), anchor="mm")
 
         filename = IMAGES_DIR / f"post_{int(time.time())}.jpg"
         img.save(filename, "JPEG", quality=95)
