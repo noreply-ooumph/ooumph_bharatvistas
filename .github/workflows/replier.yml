@@ -1,4 +1,5 @@
 name: Auto Reply Bot
+# bharatvistas
 
 on:
   schedule:
@@ -27,7 +28,7 @@ GRAPH_IG_USER_ID=%s
         run: python -u graph_replier.py
       - name: Save replied state
         run: |
-          git config user.name "muggedmoments-bot"
+          git config user.name "bharatvistas-bot"
           git config user.email "bot@ooumph.com"
           git add -f replied_comments.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "bot: update reply state [skip ci]"
