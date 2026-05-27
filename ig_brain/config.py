@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).parent.parent / ".env", override=True)
 
-ACCOUNT_USERNAME = "muggedmoments"
-ACCOUNT_USER_ID  = 65545472191
-ACCOUNT_NICHE    = "Coffee culture, aesthetic mugs, cozy lifestyle, cafe vibes, morning rituals, and everyday beautiful moments"
+ACCOUNT_USERNAME = "bharat.vistas"
+ACCOUNT_USER_ID  = 59542557883
+ACCOUNT_NICHE    = "Indian travel photography, landscapes, heritage sites, culture, traditions, and the beauty of Bharat"
 
 POSTING_HOURS    = [9, 13, 18, 21]
 POSTS_PER_DAY    = 1
