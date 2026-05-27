@@ -28,23 +28,23 @@ ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 GROQ_KEY      = os.environ.get("GROQ_API_KEY", "")
 
 CONTENT_PILLARS = [
-    "Aesthetic coffee and mug photography -- latte art, steam, cozy setups",
-    "Morning ritual content -- slow mornings, journals, and a perfect cup",
-    "Cafe culture and coffee shop vibes -- ambiance and atmosphere",
-    "Coffee recipes and brewing methods -- pour over, french press, espresso",
-    "Cozy lifestyle -- books, blankets, rainy days and coffee",
-    "Behind the mug -- stories of people and their coffee moments",
-    "Seasonal coffee drinks -- winter warmers, summer cold brews",
-    "Minimalist and aesthetic flat lay photography",
-    "Coffee facts and trivia -- engaging educational content",
-    "Community moments -- user stories and coffee connections",
+    "Iconic Indian monuments and heritage sites -- Taj Mahal, temples, forts",
+    "Himalayan landscapes -- mountains, valleys, snow peaks, trekking routes",
+    "Cultural festivals and traditions -- Holi, Diwali, local fairs",
+    "Hidden gems and offbeat destinations -- lesser-known India",
+    "Street photography -- Indian markets, people, daily life",
+    "Coastal beauty -- Goa, Kerala backwaters, beaches",
+    "Wildlife and nature -- national parks, tigers, birds",
+    "Indian cuisine and food culture -- street food, regional dishes",
+    "Village India -- rural life, traditions, crafts",
+    "Road trips and travel stories -- highways, chai stops, adventures",
 ]
 
 HASHTAG_POOLS = {
-    "coffee":     ["#coffee", "#coffeelover", "#coffeeaddict", "#coffeetime", "#coffeeoftheday", "#specialtycoffee", "#latteart", "#espresso"],
-    "aesthetic":  ["#aesthetic", "#coffeesthetic", "#cozy", "#cozyliving", "#slowmorning", "#morningroutine", "#cozyhome", "#hygge"],
-    "mugs":       ["#muglife", "#coffeemug", "#mugshot", "#ceramics", "#potterylove", "#handmade", "#mugcollection"],
-    "cafe":       ["#cafevibes", "#cafelife", "#coffeeshop", "#cafestagram", "#coffeehouse", "#barista", "#brewedwithlove"],
-    "lifestyle":  ["#lifestyle", "#morningvibes", "#selfcare", "#weekendvibes", "#homecafe", "#cottagecore", "#comfortzone"],
+    "travel":     ["#indiatravel", "#incredibleindia", "#travelindia", "#indiatourism", "#exploreindia"],
+    "photo":      ["#travelphotography", "#landscapephotography", "#naturephotography", "#streetphotography"],
+    "heritage":   ["#heritage", "#heritagesite", "#ancientindia", "#monument", "#incredibleindiaofficial"],
+    "nature":     ["#himalaya", "#mountains", "#nature", "#wildlife", "#waterfalls", "#forests"],
+    "culture":    ["#indianculture", "#tradition", "#festival", "#india", "#desi"],
     "general":    ["#reels", "#explore", "#viral", "#trending", "#instagram", "#fyp", "#instagood"],
 }
