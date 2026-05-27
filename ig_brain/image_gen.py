@@ -35,13 +35,13 @@ def generate_image_pil(prompt: str) -> Path:
         from PIL import Image, ImageDraw
         import textwrap, math
 
-        W, H = 1080, 1080
-        BG   = (4, 12, 8)
-        MID  = (20, 60, 30)
-        TEXT = (180, 230, 160)
-        SUB  = (140, 200, 120)
+        W, H    = 1080, 1080
+        BG      = (4, 12, 8)
+        MID     = (20, 60, 30)
+        TEXT    = (180, 230, 160)
+        SUB     = (140, 200, 120)
         BRAND   = "bharat.vistas"
-        Incredible India - Travel - Culture = "TAGLINE"
+        TAGLINE = "Incredible India - Travel - Culture"
 
         img  = Image.new("RGB", (W, H), BG)
         draw = ImageDraw.Draw(img)
@@ -67,7 +67,7 @@ def generate_image_pil(prompt: str) -> Path:
 
         draw.line([(W//2-120, H-140), (W//2+120, H-140)], fill=SUB, width=1)
         draw.text((W//2, H-100), BRAND,   fill=TEXT, anchor="mm")
-        draw.text((W//2, H-68),  Incredible India - Travel - Culture, fill=SUB,  anchor="mm")
+        draw.text((W//2, H-68),  TAGLINE, fill=SUB,  anchor="mm")
 
         filename = IMAGES_DIR / f"post_{int(time.time())}.jpg"
         img.save(filename, "JPEG", quality=95)
