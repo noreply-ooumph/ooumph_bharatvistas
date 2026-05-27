@@ -56,7 +56,7 @@ def maybe_evolve(client, force: bool = False) -> str:
         model="llama-3.3-70b-versatile",
         max_tokens=500,
         system=(
-            f"You are a growth strategist for muggedmoments, a coffee culture and aesthetic lifestyle Instagram.\n"
+            f"You are a growth strategist for bharat.vistas, an Indian travel photography Instagram.\n"
             f"Niche: {ACCOUNT_NICHE}\nContent pillars:\n{pillars}\n\n"
             "Based on real engagement data, write a precise 3-5 bullet strategy. "
             "Be specific: name content formats, hooks, topics that work best. "
@@ -90,7 +90,7 @@ def generate_content(client) -> dict:
         model="llama-3.3-70b-versatile",
         max_tokens=1200,
         system=(
-            f"You are the content brain for muggedmoments — a coffee culture and aesthetic lifestyle Instagram page.\n"
+            f"You are the content brain for bharat.vistas — an Indian travel photography and culture Instagram page.\n"
             f"Today is {today}. Niche: {ACCOUNT_NICHE}\n\n"
             "Generate ONE complete Instagram post. Rules:\n"
             "- Topic must feel current and relevant to coffee, lifestyle, and cozy aesthetic world right now\n"
